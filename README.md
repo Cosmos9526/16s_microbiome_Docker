@@ -47,15 +47,18 @@ docker run --rm \
 ## 📚 Input File Requirements
 
 * Input directory should contain paired-end FASTQ files.
-* Each sample must have exactly **two files**, one for forward reads and one for reverse reads.
-* Files should follow a naming convention such as:
+* Each sample must include exactly **two files**, one for forward reads (***R1***) and one for reverse reads (***R2***).
+* Files must follow this flexible naming pattern where filenames contain `*R1*` and `*R2*` respectively:
+
+📝 **Example:**
 
 ```
-SRR15836018_S1_L001_R1_001.fastq   # Forward (R1)
-SRR15836018_S1_L001_R2_001.fastq   # Reverse (R2)
+SRR15836018_S1_L001_R1_001.fastq   # *R1* = forward
+SRR15836018_S1_L001_R2_001.fastq   # *R2* = reverse
 ```
 
-* Both files must be present and correctly named for each sample to be processed.
+* The pipeline will automatically pair files using the shared prefix **before** `*R1*` / `*R2*`.
+* Do **not** rename or split files outside this convention.
 
 ---
 
