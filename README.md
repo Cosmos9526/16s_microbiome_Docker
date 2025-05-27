@@ -44,6 +44,21 @@ docker run --rm \
 
 ---
 
+## 📚 Input File Requirements
+
+* Input directory should contain paired-end FASTQ files.
+* Each sample must have exactly **two files**, one for forward reads and one for reverse reads.
+* Files should follow a naming convention such as:
+
+```
+SRR15836018_S1_L001_R1_001.fastq   # Forward (R1)
+SRR15836018_S1_L001_R2_001.fastq   # Reverse (R2)
+```
+
+* Both files must be present and correctly named for each sample to be processed.
+
+---
+
 ## 💼 Output
 
 * Processed OTU tables
